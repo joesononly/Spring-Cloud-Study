@@ -1,0 +1,21 @@
+eureka:
+  client:
+    service-url:
+      register-with-eureka: true
+      fetch-registry: true
+      defaultZone: http://test:123456@localhost:3000/eureka/
+  instance:
+    preferIpAddress: true
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/joesononly/Spring-Cloud-Study
+          username: joesonOnly
+          password: joeson645768
+          default-label: master
+          search-paths: Spring-Cloud-Config/Config

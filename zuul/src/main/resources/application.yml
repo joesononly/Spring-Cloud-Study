@@ -1,0 +1,14 @@
+server:
+  port: 8893
+spring:
+  application:
+    name: gateway-zuul
+
+eureka:
+  client:
+    service-url:
+      register-with-eureka: true
+      fetch-registry: true
+      defaultZone: http://test:123456@localhost:3000/eureka/
+  instance:
+    preferIpAddress: true

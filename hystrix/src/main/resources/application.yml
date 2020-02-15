@@ -1,0 +1,19 @@
+server:
+  port: 8892
+
+
+eureka:
+  client:
+    service-url:
+      register-with-eureka: true
+      fetch-registry: true
+      defaultZone: http://test:123456@localhost:3000/eureka/
+  instance:
+    preferIpAddress: true
+spring:
+  application:
+    name: hystrix
+
+feign:
+  hystrix:
+    enabled: true

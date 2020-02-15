@@ -1,0 +1,15 @@
+server:
+  port: 8891
+management:
+  endpoint:
+    shutdown:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+eureka:
+  client:
+    healthcheck:
+      enabled: true
