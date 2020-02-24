@@ -1,0 +1,23 @@
+server:
+  port: 8889
+management:
+  endpoint:
+    shutdown:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+
+#redis配置
+redis:
+  database: 3
+  host: localhost
+  port: 6379
+  password: test
+  timeout: 1000
