@@ -15,7 +15,7 @@ spring:
 spring:
   profiles: test
   application:
-    name: config-client
+    name: redis
   cloud:
     config:
       uri: http://localhost:8888
