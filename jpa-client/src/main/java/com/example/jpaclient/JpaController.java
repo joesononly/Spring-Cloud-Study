@@ -10,12 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Optional;
 
 @RestController
+@RequestMapping("/order")
 public class JpaController {
 
     @Autowired
     OrderRepository orderRepository;
 
-    @RequestMapping("/order/{id}")
+    @RequestMapping("/{id}")
     public Optional<Order> queryOrderById(@PathVariable String id){
         return orderRepository.findById(id);
     }
