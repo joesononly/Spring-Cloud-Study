@@ -19,3 +19,8 @@
 #zuul
     spring cloud中的网关
     
+#JPA
+    hibernate中jpa插件，用于维护javabean之间的关联关系，达到动态构建SQL的目的
+
+#JConsole
+    用于学习JDK中各种工具的使用
