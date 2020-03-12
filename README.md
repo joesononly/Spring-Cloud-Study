@@ -24,3 +24,8 @@
 
 #JConsole
     用于学习JDK中各种工具的使用
+    
+#threadExample
+    测试多线程并发可能会遇到的各种问题，如：线程池中使用ThreadLocal历史数据遗留问题，ConcurrentHashMap中需要注意并非该
+    类中的操作都是线程安全的。CopyOnWriteArrayList与ArrayList在并行转串行运行时读写性能对比，本项目使用了JMH进行压力测试
+    ，运行压测可以使用IDEA中JMH Plugin，或者手动编写main方法启动。其中有-rf json -rff result.json vm参数指定输出日志到result.json文件中，https://jmh.morethan.io/
