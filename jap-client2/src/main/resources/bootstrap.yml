@@ -1,0 +1,82 @@
+eureka:
+  client:
+    service-url:
+      register-with-eureka: true
+      fetch-registry: true
+      defaultZone: http://test:123456@localhost:3000/eureka/
+  instance:
+    preferIpAddress: true
+
+spring:
+  profiles:
+    active: dev
+
+---
+spring:
+  profiles: test
+  application:
+    name: config-client
+  cloud:
+    config:
+      uri: http://localhost:8888
+      label: master
+      profile: test
+  datasource:
+    driverClassName: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@172.18.10.20:1521:LINKCRM
+    url1: jdbc:oracle:thin:@172.18.10.20:1521:LINKCRM
+    url2: jdbc:oracle:thin:@172.18.10.20:1521:LINKCRM
+    username: linkcrm_stage
+    password: Dpcrm2017
+    max-active: 10000
+    max-idle: 20
+    min-idle: 2
+    max-wait: 600000
+    test-on-borrow: true
+    test-while-idle: true
+    validation-query: select 1 from dual
+    initial-size: 10
+    username2: SIEBEL
+    password2: Sebluat01
+#    JPA打印执行SQL
+  jpa:
+    show-sql: true
+
+---
+spring:
+  profiles: dev
+  application:
+    name: config-client
+  cloud:
+    config:
+      uri: http://localhost:8888
+      label: master
+      profile: dev
+  datasource:
+    driverClassName: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@172.18.10.20:1521:LINKCRM
+    url1: jdbc:oracle:thin:@172.18.10.20:1521:LINKCRM
+    url2: jdbc:oracle:thin:@172.18.10.20:1521:LINKCRM
+    username: linkcrm_stage
+    password: Dpcrm2017
+    max-active: 10000
+    max-idle: 20
+    min-idle: 2
+    max-wait: 600000
+    test-on-borrow: true
+    test-while-idle: true
+    validation-query: select 1 from dual
+    initial-size: 10e
+    username2: SIEBEL
+    password2: Sebluat01
+  #    JPA打印执行SQL
+  jpa:
+    show-sql: true
+
+
+logging:
+  level:
+    org:
+      springframework:
+        orm:
+          jpa: DEBUG
