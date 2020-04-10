@@ -54,11 +54,11 @@ spring:
       profile: dev
   datasource:
     driverClassName: oracle.jdbc.OracleDriver
-    url: jdbc:oracle:thin:@172.18.10.20:1521:LINKCRM
-    url1: jdbc:oracle:thin:@172.18.10.20:1521:LINKCRM
-    url2: jdbc:oracle:thin:@172.18.10.20:1521:LINKCRM
-    username: linkcrm_stage
-    password: Dpcrm2017
+    url: jdbc:oracle:thin:@192.168.19.145:1521:DEVP
+    url1: jdbc:oracle:thin:@192.168.19.145:1521:DEVP
+    url2: jdbc:oracle:thin:@192.168.19.145:1521:DEVP
+    username: siebel
+    password: Sebldevp01
     max-active: 10000
     max-idle: 20
     min-idle: 2
@@ -66,6 +66,17 @@ spring:
     test-on-borrow: true
     test-while-idle: true
     validation-query: select 1 from dual
-    initial-size: 10
+    initial-size: 10e
     username2: SIEBEL
     password2: Sebluat01
+  #    JPA打印执行SQL
+  jpa:
+    show-sql: true
+
+
+logging:
+  level:
+    org:
+      springframework:
+        orm:
+          jpa: DEBUG
